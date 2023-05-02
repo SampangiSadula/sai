@@ -1,0 +1,19 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata: 
+  name: proposedjob
+spec: 
+  jobTemplate: 
+    metadata: job1
+    spec: 
+      backoffLimit: 5
+      template: 
+        metadata: job2
+        spec: 
+          containers: 
+            - name: alpine
+              image: alpine
+              commands: 
+                - sleep
+                - 10s

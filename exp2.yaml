@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: exp2
+spec:
+  containers: 
+    - name: nginx
+      image: nginx
+      ports: 
+        - containerports: 80
+    - name: alpine
+      image: alpine
+      agrs: 
+        - sleep
+        - 1d 
